@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تصاميم البحرين | تصميم مواقع ومحتوى وإدارة شبكات</title>
+  <meta name="description" content="تصميم مواقع ويب بشكل احترافي، تصميم محتوى شبكات التواصل الاجتماعي، وإدارة المواقع والشبكات — تصاميم البحرين." />
+  <meta name="keywords" content="تصميم مواقع, إدارة شبكات, تصميم محتوى, البحرين, Web Design, Social Media" />
+  <meta property="og:title" content="تصاميم البحرين" />
+  <meta property="og:description" content="موقع بسيط وجذاب بألوان فاتحة ولمسات احترافية." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#e6f4ff" />  <!-- Google Font (Arabic-friendly) -->  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">  <style>
+    :root{
+      --bg-start:#f0f9ff;   /* أزرق سماوي باهت */
+      --bg-end:#fff7ed;     /* خوخي باهت */
+      --primary:#0ea5e9;    /* Sky */
+      --primary-2:#22c55e;  /* Emerald */
+      --ink:#0f172a;        /* Slate-900 */
+      --muted:#475569;      /* Slate-600 */
+      --card:#ffffffcc;     /* أبيض نصف شفاف */
+      --stroke:#e2e8f0;     /* حد خفيف */
+      --shadow: 0 10px 30px rgba(2, 132, 199, .08);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family:'Tajawal', system-ui, sans-serif; color:var(--ink);
+      background: radial-gradient(1800px 800px at 85% -10%, #e9faff 10%, transparent 60%),
+                  radial-gradient(1400px 700px at -10% 10%, #fff1f2 5%, transparent 55%),
+                  linear-gradient(120deg, var(--bg-start), var(--bg-end));
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:auto; padding:0 20px}
+    header{
+      position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px);
+      background:linear-gradient(180deg, #ffffffd9, #ffffffb3 60%, transparent); border-bottom:1px solid var(--stroke);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+    .brand{display:flex; gap:10px; align-items:center; font-weight:800; letter-spacing:.3px}
+    .logo{
+      width:38px; height:38px; border-radius:12px; display:grid; place-items:center;
+      background:linear-gradient(135deg, #a5f3fc, #d1fae5);
+      border:1px solid #e5e7eb; box-shadow: var(--shadow);
+    }
+    .logo svg{width:22px; height:22px}
+    nav ul{display:flex; gap:18px; list-style:none; padding:0; margin:0}
+    nav a{padding:8px 12px; border-radius:999px; font-weight:500}
+    nav a:hover{background:#0000000a}
+    .cta{display:flex; align-items:center; gap:10px}
+    .btn{padding:10px 16px; border-radius:999px; font-weight:700; border:1px solid var(--stroke); box-shadow: var(--shadow)}
+    .btn-primary{background:linear-gradient(135deg, #e0f2fe, #dcfce7); border-color:#dbeafe}
+    .btn-primary:hover{transform:translateY(-1px)}
+
+    /* Mobile nav */
+    .burger{display:none; background:none; border:0}
+    @media(max-width:880px){
+      nav ul{display:none}
+      .burger{display:block}
+      .mobile{position:fixed; inset:72px 16px auto 16px; background:#fff; border:1px solid var(--stroke); border-radius:16px; padding:14px; box-shadow: var(--shadow); display:none}
+      .mobile a{display:block; padding:12px; border-radius:12px}
+      .mobile a:hover{background:#f8fafc}
+      .mobile.show{display:block}
+    }
+
+    /* Hero */
+    .hero{padding:64px 0 30px}
+    .hero-grid{display:grid; grid-template-columns: 1.2fr 1fr; gap:28px; align-items:center}
+    @media(max-width:960px){.hero-grid{grid-template-columns:1fr}}
+    .badge{display:inline-flex; gap:8px; align-items:center; padding:6px 10px; border-radius:999px; border:1px solid var(--stroke); background:#ffffffa6}
+    h1{font-size: clamp(28px, 4vw, 46px); line-height:1.1; margin:14px 0 14px}
+    .grad{background: linear-gradient(135deg, #0284c7, #0ea5e9 40%, #22c55e 85%); -webkit-background-clip: text; background-clip:text; color:transparent}
+    .lead{color:var(--muted); font-size: clamp(15px, 1.4vw, 18px)}
+    .hero-card{background:var(--card); border:1px solid var(--stroke); border-radius:var(--radius); padding:18px; box-shadow: var(--shadow)}
+    .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:10px}
+    .kpi{background:#fff; border:1px solid var(--stroke); border-radius:14px; padding:14px; text-align:center}
+
+    /* Sections */
+    section{padding:64px 0}
+    .section-title{font-size:28px; margin:0 0 8px}
+    .section-sub{color:var(--muted); margin:0 0 24px}
+
+    /* Services */
+    .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    @media(max-width:960px){.cards{grid-template-columns:1fr}}
+    .card{background:#fff; border:1px solid var(--stroke); border-radius:var(--radius); padding:18px; box-shadow: var(--shadow); transition:.2s ease}
+    .card:hover{transform:translateY(-4px)}
+    .icon{width:42px; height:42px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(135deg, #f0f9ff, #dcfce7); border:1px solid #e5e7eb; margin-bottom:10px}
+
+    /* Portfolio */
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    @media(max-width:920px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.grid{grid-template-columns:1fr}}
+    .shot{aspect-ratio: 16/10; border-radius:16px; overflow:hidden; position:relative; border:1px solid var(--stroke); background:linear-gradient(135deg,#f1f5f9,#fff)}
+    .shot .cap{position:absolute; inset:auto 12px 12px 12px; background:#ffffffd9; padding:8px 10px; border-radius:10px; font-size:14px; border:1px solid var(--stroke)}
+
+    /* Pricing */
+    .prices{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    @media(max-width:960px){.prices{grid-template-columns:1fr}}
+    .price{background:var(--card); border:1px solid var(--stroke); border-radius:var(--radius); padding:22px; box-shadow: var(--shadow)}
+    .price h3{margin:0 0 4px}
+    .price .amount{font-size:30px; font-weight:800}
+    .features{margin:12px 0 18px; color:var(--muted)}
+    .features li{margin:8px 0}
+
+    /* CTA */
+    .cta-box{background:linear-gradient(135deg, #e0f2fe, #dcfce7); border:1px solid #dbeafe; border-radius:22px; padding:24px; box-shadow: var(--shadow)}
+
+    /* Footer */
+    footer{padding:30px 0; color:#334155}
+    .foot{display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:space-between}
+
+    /* Small motion */
+    .fade-up{opacity:0; transform:translateY(12px); animation:fadeUp .8s ease forwards;}
+    .fade-up:nth-child(2){animation-delay:.08s}
+    .fade-up:nth-child(3){animation-delay:.16s}
+    @keyframes fadeUp{to{opacity:1; transform:none}}
+  </style></head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="تصاميم البحرين">
+        <span class="logo" aria-hidden="true">
+          <!-- علامة بسيطة (SVG) -->
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M5 12c0-4.418 3.582-8 8-8 1.657 0 3 1.343 3 3v1c0 1.657-1.343 3-3 3H7" stroke="#0ea5e9" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M7 10v8c0 1.105.895 2 2 2h2c3.314 0 6-2.686 6-6v-1" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>تصاميم البحرين</span>
+      </a><nav aria-label="روابط القسم">
+    <ul>
+      <li><a href="#services">الخدمات</a></li>
+      <li><a href="#portfolio">الأعمال</a></li>
+      <li><a href="#pricing">الباقات</a></li>
+      <li><a href="#contact">تواصل</a></li>
+    </ul>
+  </nav>
+
+  <div class="cta">
+    <a class="btn btn-primary" href="https://wa.me/97333375858" target="_blank" rel="noopener" aria-label="تواصل واتساب">واتساب الآن</a>
+    <button class="burger" aria-label="قائمة" onclick="document.querySelector('.mobile').classList.toggle('show')">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</div>
+<div class="container mobile" aria-label="قائمة الجوال">
+  <a href="#services" onclick="this.closest('.mobile').classList.remove('show')">الخدمات</a>
+  <a href="#portfolio" onclick="this.closest('.mobile').classList.remove('show')">الأعمال</a>
+  <a href="#pricing" onclick="this.closest('.mobile').classList.remove('show')">الباقات</a>
+  <a href="#contact" onclick="this.closest('.mobile').classList.remove('show')">تواصل</a>
+</div>
+
+  </header>  <!-- Hero -->  <main id="top" class="hero">
+    <div class="container hero-grid">
+      <div class="fade-up">
+        <span class="badge">وكالة تصميم — جودة + سرعة</span>
+        <h1>نُصمّم حضورك الرقمي <span class="grad">باحتراف</span> ولمسات أنيقة.</h1>
+        <p class="lead">تصميم مواقع ويب بشكل احترافي، تصميم محتوى شبكات التواصل الاجتماعي، وإدارة المواقع والشبكات — كل ذلك بألوان فاتحة هادئة وتدرجات جذابة بلا فوضى.</p>
+        <div style="display:flex; gap:10px; margin-top:14px">
+          <a class="btn btn-primary" href="#services">استكشف الخدمات</a>
+          <a class="btn" href="mailto:Richadvadv@gmail.com">راسلنا بالبريد</a>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><div style="font-weight:800; font-size:22px">+7</div><div style="color:var(--muted)">سنوات خبرة</div></div>
+          <div class="kpi"><div style="font-weight:800; font-size:22px">+120</div><div style="color:var(--muted)">مشروع مُنجز</div></div>
+          <div class="kpi"><div style="font-weight:800; font-size:22px">24/7</div><div style="color:var(--muted)">دعم سريع</div></div>
+        </div>
+      </div>
+      <div class="hero-card fade-up">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='620'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%23e0f2fe'/%3E%3Cstop offset='1' stop-color='%23dcfce7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect rx='16' width='100%25' height='100%25' fill='url(%23g)'/%3E%3Crect x='36' y='40' rx='10' width='828' height='60' fill='%23fff' stroke='%23e5e7eb'/%3E%3Crect x='36' y='120' rx='10' width='520' height='380' fill='%23fff' stroke='%23e5e7eb'/%3E%3Crect x='576' y='120' rx='10' width='288' height='180' fill='%23fff' stroke='%23e5e7eb'/%3E%3Crect x='576' y='320' rx='10' width='288' height='180' fill='%23fff' stroke='%23e5e7eb'/%3E%3C/svg%3E" alt="معاينة تصميم نظيف بألوان فاتحة" style="width:100%; border-radius:14px; border:1px solid var(--stroke)"/>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:14px">معاينة لواجهة نظيفة — بدون صور خارجية لسرعة التحميل.</p>
+      </div>
+    </div>
+  </main>  <!-- Services -->  <section id="services">
+    <div class="container">
+      <h2 class="section-title">الخدمات</h2>
+      <p class="section-sub">كل ما تحتاجه لبناء هوية رقمية قوية — من الموقع وحتى إدارة المحتوى.</p>
+      <div class="cards">
+        <article class="card fade-up">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8"/></svg>
+          </div>
+          <h3>تصميم مواقع ويب احترافية</h3>
+          <p style="color:var(--muted)">مواقع سريعة الاستجابة، متوافقة مع محركات البحث، وخبرة UX لطيفة بخطوط عربية جميلة.</p>
+        </article>
+        <article class="card fade-up">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8"><path d="M4 7h10l6 6v4a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7z"/><path d="M14 7v5h5"/></svg>
+          </div>
+          <h3>تصميم محتوى شبكات التواصل</h3>
+          <p style="color:var(--muted)">قوالب موحّدة وبصرية جذابة تُظهر علامتك بألوان فاتحة متناسقة وتدرجات أنيقة.</p>
+        </article>
+        <article class="card fade-up">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 5 15.4a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06A2 2 0 1 1 7.04 4.3l.06.06c.48.48 1.15.66 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.08c.67.33 1.34.15 1.82-.33l.06-.06A2 2 0 1 1 20.7 7.04l-.06.06A1.65 1.65 0 0 0 20 9c0 .57.22 1.09.6 1.48.33.67.15 1.34-.33 1.82l-.06.06c-.48.48-1.15.66-1.82.33h-.02A1.65 1.65 0 0 0 19.4 15z"/></svg>
+          </div>
+          <h3>إدارة المواقع والشبكات</h3>
+          <p style="color:var(--muted)">جدولة المحتوى، التقارير، التحسين المستمر، والردود — كي تركز على عملك.</p>
+        </article>
+      </div>
+    </div>
+  </section>  <!-- Portfolio -->  <section id="portfolio">
+    <div class="container">
+      <h2 class="section-title">نماذج أعمال</h2>
+      <p class="section-sub">لقطات معاينة لواجهات نظيفة وخطوط واضحة — أما الأعمال الفعلية فتُعرض عند التواصل.</p>
+      <div class="grid">
+        <figure class="shot fade-up"><div class="cap">موقع شركة خدمات</div></figure>
+        <figure class="shot fade-up"><div class="cap">متجر إلكتروني بسيط</div></figure>
+        <figure class="shot fade-up"><div class="cap">صفحة هبوط حملة</div></figure>
+        <figure class="shot fade-up"><div class="cap">مدونة أعمال</div></figure>
+        <figure class="shot fade-up"><div class="cap">ملف تعريفي شخصي</div></figure>
+        <figure class="shot fade-up"><div class="cap">قالب منشورات سوشيال</div></figure>
+      </div>
+    </div>
+  </section>  <!-- Pricing -->  <section id="pricing">
+    <div class="container">
+      <h2 class="section-title">الباقات</h2>
+      <p class="section-sub">أسعار مرنة تناسب مشروعك — مع دعم مستمر وتحديثات.</p>
+      <div class="prices">
+        <div class="price fade-up">
+          <h3>بداية</h3>
+          <div class="amount">BHD 99</div>
+          <ul class="features">
+            <li>صفحة هبوط واحدة</li>
+            <li>تصميم ألوان فاتحة ومتجاوب</li>
+            <li>ربط واتساب وبريد</li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/97333375858" target="_blank" rel="noopener">اطلب الآن</a>
+        </div>
+        <div class="price fade-up" style="border-width:2px">
+          <h3>محترف</h3>
+          <div class="amount">BHD 249</div>
+          <ul class="features">
+            <li>حتى 5 صفحات</li>
+            <li>تحسين SEO أساسي</li>
+            <li>نماذج تواصل وتقارير بسيطة</li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/97333375858" target="_blank" rel="noopener">اطلب الآن</a>
+        </div>
+        <div class="price fade-up">
+          <h3>شركة</h3>
+          <div class="amount">BHD 499</div>
+          <ul class="features">
+            <li>تصميم مخصص وهوية بصرية</li>
+            <li>تكاملات متقدمة وتحليلات</li>
+            <li>إدارة محتوى شهرية</li>
+          </ul>
+          <a class="btn btn-primary" href="https://wa.me/97333375858" target="_blank" rel="noopener">اطلب الآن</a>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- Contact -->  <section id="contact">
+    <div class="container">
+      <div class="cta-box fade-up">
+        <h2 style="margin:0 0 6px">تواصل معنا</h2>
+        <p style="margin:0 0 16px; color:var(--muted)">نحن جاهزون لتحويل فكرتك لتصميم مبهر بألوان فاتحة وتدرجات أنيقة.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn btn-primary" href="https://wa.me/97333375858" target="_blank" rel="noopener" aria-label="واتساب">واتساب: 0097333375858</a>
+          <a class="btn" href="tel:+97333375858" aria-label="اتصال">اتصال مباشر</a>
+          <a class="btn" href="mailto:Richadvadv@gmail.com" aria-label="بريد">Richadvadv@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- Footer -->  <footer>
+    <div class="container foot">
+      <div>&copy; <span id="y"></span> تصاميم البحرين — كل الحقوق محفوظة.</div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap">
+        <a href="#services">الخدمات</a>
+        <span aria-hidden="true">•</span>
+        <a href="#portfolio">الأعمال</a>
+        <span aria-hidden="true">•</span>
+        <a href="#pricing">الباقات</a>
+        <span aria-hidden="true">•</span>
+        <a href="#contact">تواصل</a>
+      </div>
+    </div>
+  </footer>  <!-- Small scripts -->  <script>
+    // سنة ديناميكية للفوتر
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>  <!-- Schema.org (اختياري لتحسين الظهور) -->  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "تصاميم البحرين",
+    "url": "",
+    "email": "Richadvadv@gmail.com",
+    "telephone": "+97333375858",
+    "sameAs": ["https://wa.me/97333375858"],
+    "description": "تصميم مواقع ويب، تصميم محتوى شبكات التواصل، وإدارة المواقع والشبكات بألوان فاتحة ولمسات احترافية."
+  }
+  </script></body>
+</html>
